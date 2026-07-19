@@ -598,3 +598,116 @@ padding:25px;
 }
 
 }
+/* ==========================================
+   GIFT SECTION
+========================================== */
+
+#giftSection{
+    display:none;
+    width:100%;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffe4ef,#fff6fb,#ffe9f5);
+    overflow:hidden;
+    position:relative;
+}
+
+/* Floating animation */
+
+.gift-box{
+    width:220px;
+    height:220px;
+    position:relative;
+    animation:floatGift 2.5s ease-in-out infinite;
+}
+
+@keyframes floatGift{
+    0%{transform:translateY(0);}
+    50%{transform:translateY(-12px);}
+    100%{transform:translateY(0);}
+}
+
+/* Gift Body */
+
+.gift-body{
+    width:220px;
+    height:150px;
+    background:linear-gradient(145deg,#ff5c9d,#ff87b8);
+    border-radius:12px;
+    position:absolute;
+    bottom:0;
+    box-shadow:0 20px 35px rgba(255,92,157,.35);
+}
+
+/* Gift Lid */
+
+.gift-lid{
+    width:240px;
+    height:55px;
+    background:linear-gradient(145deg,#ff3f8d,#ff76b0);
+    border-radius:12px;
+    position:absolute;
+    left:-10px;
+    top:25px;
+    transition:1s ease;
+    z-index:10;
+}
+
+/* Ribbons */
+
+.gift-ribbon.vertical{
+    position:absolute;
+    width:20px;
+    height:150px;
+    background:#ffd54f;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.gift-ribbon.horizontal{
+    position:absolute;
+    width:220px;
+    height:20px;
+    background:#ffd54f;
+    top:55px;
+}
+
+/* Bow */
+
+.gift-lid::before,
+.gift-lid::after{
+
+content:"";
+
+position:absolute;
+
+width:45px;
+height:45px;
+
+border:8px solid #ffd54f;
+
+border-radius:50%;
+
+top:-20px;
+}
+
+.gift-lid::before{
+left:82px;
+}
+
+.gift-lid::after{
+right:82px;
+}
+
+/* Open Animation */
+
+.gift-open .gift-lid{
+
+transform:
+translateY(-120px)
+rotate(-12deg);
+
+opacity:0;
+
+}
