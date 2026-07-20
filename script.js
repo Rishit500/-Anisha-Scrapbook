@@ -110,3 +110,53 @@ function startTyping(){
     },40);
 
 }
+// ===============================
+// Finish Button
+// ===============================
+
+const finishBtn = document.getElementById("finishBtn");
+
+if (finishBtn) {
+
+    finishBtn.addEventListener("click", () => {
+
+        alert("🎉 Happy Birthday Anisha ❤️");
+
+        // Final surprise will come here later
+
+    });
+
+}
+// ===============================
+// Page Navigation
+// ===============================
+
+const pages = document.querySelectorAll(".page");
+const nextButtons = document.querySelectorAll(".nextPage");
+
+let currentPage = 0;
+
+// Hide all pages except first
+pages.forEach((page, index) => {
+    if (index !== 0) {
+        page.style.display = "none";
+    }
+});
+
+nextButtons.forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        pages[currentPage].style.display = "none";
+
+        currentPage++;
+
+        if (currentPage < pages.length) {
+
+            pages[currentPage].style.display = "flex";
+
+        }
+
+    });
+
+});
