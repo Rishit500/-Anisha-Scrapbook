@@ -711,3 +711,22 @@ rotate(-12deg);
 opacity:0;
 
 }
+// =======================
+// PAGE FLIP
+// =======================
+
+const nextButtons = document.querySelectorAll(".nextPage");
+
+nextButtons.forEach(button=>{
+
+button.addEventListener("click",()=>{
+
+const number = button.dataset.page;
+
+const page = document.querySelector(".page"+number);
+
+page.classList.add("flipped");
+
+});
+
+});
