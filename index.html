@@ -6,12 +6,12 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Birthday ❤️</title>
+<title>Happy Birthday Anisha ❤️</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 
@@ -19,63 +19,98 @@
 
 <body>
 
-<!-- Background -->
-<div class="background-hearts"></div>
+<!-- ================= LOADER ================= -->
+
+<div id="loader">
+
+    <div class="loader-heart">❤️</div>
+
+    <h1>Preparing Something Special...</h1>
+
+    <p>Made with ❤️ by Rishit</p>
+
+</div>
+
+<!-- Floating Hearts -->
+
+<div class="floating-hearts"></div>
+
+<!-- ================= MUSIC BUTTON ================= -->
+
+<button id="musicBtn">
+    🎵
+</button>
+
+<audio id="bgMusic" loop>
+    <source src="music/song.mp3" type="audio/mpeg">
+</audio>
 
 <!-- ================= COVER PAGE ================= -->
 
-<section id="coverPage" class="cover">
+<section id="coverPage">
 
-    <div class="glass">
+<div class="glass-card">
 
-        <p class="small">A Special Birthday Gift For</p>
+<p class="small-title">
+A Special Birthday Gift For
+</p>
 
-        <h1>Anisha</h1>
+<h1>Anisha</h1>
 
-        <h2>Happy Birthday ❤️</h2>
+<h2>Happy Birthday ❤️</h2>
 
-        <img src="images/cover.jpg" class="cover-photo" alt="Cover Photo">
+<img
+src="images/cover.jpg"
+class="cover-photo"
+alt="Cover">
 
-        <p class="message">
-            There is a little surprise waiting for you...
-            <br><br>
-            Open the book and begin our journey ❤️
-        </p>
+<p class="cover-text">
 
-        <button id="openGift">
-            📖 Open My Scrapbook
-        </button>
+There is a little surprise waiting for you...
 
-    </div>
+<br><br>
+
+Open the scrapbook and begin our beautiful journey ❤️
+
+</p>
+
+<button id="openGift">
+
+📖 Open My Scrapbook
+
+</button>
+
+</div>
 
 </section>
-<!-- ================= GIFT ANIMATION ================= -->
+
+<!-- ================= GIFT SECTION ================= -->
 
 <section id="giftSection">
 
-    <div class="gift-box">
+<div class="gift-box">
 
-        <div class="gift-lid"></div>
+<div class="gift-lid"></div>
 
-        <div class="gift-body">
+<div class="gift-body">
 
-            <span class="gift-ribbon vertical"></span>
-            <span class="gift-ribbon horizontal"></span>
+<div class="ribbon vertical"></div>
 
-        </div>
+<div class="ribbon horizontal"></div>
 
-    </div>
+</div>
+
+</div>
 
 </section>
-<!-- ================= BOOK PAGE ================= -->
+
+<!-- ================= BOOK ================= -->
 
 <section id="bookSection">
 
-<div class="book-container">
+<div class="book">
 
-<div class="book" id="book">
-
-<!-- Front Cover -->
+<!-- ================= COVER ================= -->
 
 <div class="cover-front">
 
@@ -85,19 +120,17 @@
 
 <h2>Anisha ❤️</h2>
 
-<p>
-Made with Love by
-</p>
+<p>Made With Love By</p>
 
 <h3>Rishit</h3>
 
-<div class="ribbon"></div>
+<div class="bookmark"></div>
 
 </div>
 
 </div>
 
-<!-- ================= INSIDE PAGE 1 ================= -->
+<!-- ================= PAGE 1 ================= -->
 
 <div class="page page1">
 
@@ -105,12 +138,12 @@ Made with Love by
 
 <h2>Dear Miss Clumsy ❤️</h2>
 
-<p id="typingText">
+<p id="typingText"></p>
 
-</p>
+<button class="nextBtn">
 
-<button class="nextPage" data-page="1">
 Next →
+
 </button>
 
 </div>
@@ -127,19 +160,28 @@ Next →
 
 <p>
 
-You are the reason
-my smile has a reason.
+You are the reason behind
+my happiest smiles.
 
-You make ordinary days
-feel extraordinary.
+<br><br>
 
-Thank you for being
-exactly who you are.
+Your kindness,
+your care,
+your innocence...
+
+are the most beautiful things
+I have ever known.
+
+<br><br>
+
+Never stop being YOU ❤️
 
 </p>
 
-<button class="nextPage" data-page="2">
+<button class="nextBtn">
+
 Next →
+
 </button>
 
 </div>
@@ -154,16 +196,18 @@ Next →
 
 <h2>My Favourite Person ❤️</h2>
 
-<div class="memory-box">
+<div class="memory-grid">
 
 <div class="memory-card">
 
-💖
+❤️
 
 <h3>Your Smile</h3>
 
 <p>
+
 Makes my whole day brighter.
+
 </p>
 
 </div>
@@ -175,7 +219,9 @@ Makes my whole day brighter.
 <h3>Your Care</h3>
 
 <p>
-Makes me feel lucky.
+
+Makes me feel lucky every day.
+
 </p>
 
 </div>
@@ -187,15 +233,19 @@ Makes me feel lucky.
 <h3>Your Presence</h3>
 
 <p>
-Makes every moment special.
+
+Makes every moment magical.
+
 </p>
 
 </div>
 
 </div>
 
-<button class="nextPage" data-page="3">
+<button class="nextBtn">
+
 Next →
+
 </button>
 
 </div>
@@ -210,9 +260,18 @@ Next →
 
 <h2>Birthday Cake 🎂</h2>
 
-<div id="cakeArea">
+<p>
+
+Click the candle
+and make your birthday wish ❤️
+
+</p>
 
 <div id="cake">
+
+<div class="cake-top"></div>
+
+<div class="cake-body"></div>
 
 <div class="candle">
 
@@ -222,16 +281,8 @@ Next →
 
 </div>
 
-</div>
+<button id="cakeNext">
 
-<p>
-
-Click the candle
-to make a birthday wish ❤️
-
-</p>
-
-<button class="nextPage" data-page="4">
 Continue →
 
 </button>
@@ -239,47 +290,54 @@ Continue →
 </div>
 
 </div>
-
 <!-- ================= PAGE 5 ================= -->
 
 <div class="page page5">
 
-<div class="page-content">
+    <div class="page-content">
 
-<h2>One Last Thing ❤️</h2>
+        <h2>One Last Thing ❤️</h2>
 
-<p>
+        <p>
 
-Thank you for coming
-into my life.
+            Dear Anisha,
 
-I hope today becomes
-one of your happiest memories.
+            <br><br>
 
-Happy Birthday,
-Miss Clumsy ❤️
+            Thank you for coming into my life.
 
-</p>
+            Every moment with you has become
+            one of my favourite memories.
 
-<h3>
+            <br><br>
 
-Forever Yours,
+            I hope today fills your heart
+            with happiness, laughter and love.
 
-<br>
+            <br><br>
 
-Rishit ❤️
+            Happy Birthday,
+            Miss Clumsy ❤️
 
-</h3>
+        </p>
 
-<button id="finishBtn">
-    
-Finish❤️
+        <h3>
 
-</button>
+            Forever Yours,
 
-</div>
+            <br>
 
-</div>
+            Rishit ❤️
+
+        </h3>
+
+        <button id="finishBtn">
+
+            Finish ❤️
+
+        </button>
+
+    </div>
 
 </div>
 
@@ -287,9 +345,76 @@ Finish❤️
 
 </section>
 
+<!-- ================= CELEBRATION ================= -->
+
+<section id="celebrationScreen">
+
+    <div class="celebration-content">
+
+        <h1>🎉 Happy Birthday Anisha ❤️</h1>
+
+        <p>
+
+            May your smile always stay this beautiful.
+
+            <br><br>
+
+            I hope all your dreams come true.
+
+        </p>
+
+        <button id="foreverBtn">
+
+            One More Thing ❤️
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= FOREVER SCREEN ================= -->
+
+<section id="foreverScreen">
+
+    <div class="forever-content">
+
+        <h1>I Love You Forever ❤️</h1>
+
+        <p>
+
+            No matter where life takes us...
+
+            <br><br>
+
+            You'll always be
+
+            <br>
+
+            My Favourite Person ❤️
+
+        </p>
+
+        <button id="restartBtn">
+
+            Replay 🎁
+
+        </button>
+
+    </div>
+
+</section>
+
+<!-- ================= CONFETTI ================= -->
+
+<canvas id="confettiCanvas"></canvas>
+
+<!-- ================= SCRIPTS ================= -->
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
 <script src="script.js"></script>
 
-</body>
 </body>
 
 </html>
