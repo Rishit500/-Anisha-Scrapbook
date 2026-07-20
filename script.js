@@ -1,76 +1,157 @@
-// ===============================
-// Elements
-// ===============================
+// ==========================================
+// HAPPY BIRTHDAY ANISHA ❤️
+// SCRIPT.JS - PART 1
+// ==========================================
 
-const openBtn = document.getElementById("openGift");
+// -------------------------
+// ELEMENTS
+// -------------------------
+
+const loader = document.getElementById("loader");
+
+const musicBtn = document.getElementById("musicBtn");
+const bgMusic = document.getElementById("bgMusic");
 
 const coverPage = document.getElementById("coverPage");
-
 const giftSection = document.getElementById("giftSection");
-
-const giftBox = document.querySelector(".gift-box");
-
 const bookSection = document.getElementById("bookSection");
 
-const bookCover = document.querySelector(".cover-front");
+const openGift = document.getElementById("openGift");
 
-// ===============================
-// Open Gift
-// ===============================
+const giftBox = document.querySelector(".gift-box");
+const bookCover = document.querySelector(".book-cover");
 
-openBtn.addEventListener("click", () => {
+const typingText = document.getElementById("typingText");
 
-    // Fade Cover
+// -------------------------
+// LOADER
+// -------------------------
 
-    coverPage.style.transition = "0.8s";
-
-    coverPage.style.opacity = "0";
+window.addEventListener("load", () => {
 
     setTimeout(() => {
 
-        coverPage.style.display = "none";
+        loader.style.opacity = "0";
 
-        giftSection.style.display = "flex";
+        setTimeout(() => {
+
+            loader.style.display = "none";
+
+            document.body.style.overflow = "hidden";
+
+        },1000);
+
+    },2500);
+
+});
+
+// -------------------------
+// MUSIC
+// -------------------------
+
+let playing = false;
+
+musicBtn.addEventListener("click", () => {
+
+    if(!playing){
+
+        bgMusic.play();
+
+        musicBtn.innerHTML = "⏸️";
+
+        playing = true;
+
+    }
+
+    else{
+
+        bgMusic.pause();
+
+        musicBtn.innerHTML = "🎵";
+
+        playing = false;
+
+    }
+
+});
+
+// -------------------------
+// FLOATING HEARTS
+// -------------------------
+
+function createHeart(){
+
+    const heart = document.createElement("div");
+
+    heart.className = "heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random()*100 + "%";
+
+    heart.style.fontSize = (15 + Math.random()*25) + "px";
+
+    heart.style.animationDuration = (5 + Math.random()*5) + "s";
+
+    document.getElementById("floatingHearts").appendChild(heart);
+
+    setTimeout(()=>{
+
+        heart.remove();
+
+    },10000);
+
+}
+
+setInterval(createHeart,500);
+
+// -------------------------
+// OPEN GIFT
+// -------------------------
+
+openGift.addEventListener("click",()=>{
+
+    coverPage.classList.add("fade-out");
+
+    setTimeout(()=>{
+
+        coverPage.style.display="none";
+
+        giftSection.style.display="flex";
 
     },800);
 
-
-    // Open Gift
-
-    setTimeout(() => {
+    setTimeout(()=>{
 
         giftBox.classList.add("gift-open");
 
-    },2200);
+    },1500);
 
-
-    // Show Book
-
-    setTimeout(() => {
+    setTimeout(()=>{
 
         giftSection.style.display="none";
 
         bookSection.style.display="flex";
 
-    },3400);
+    },3000);
 
+    setTimeout(()=>{
 
-    // Open Book
+        bookCover.classList.add("cover-open");
 
-    setTimeout(() => {
+    },3600);
 
-        bookCover.style.transform="rotateY(-160deg)";
+    setTimeout(()=>{
 
         startTyping();
 
-    },3900);
+    },4300);
 
 });
 
-
-// ===============================
-// Typing Animation
-// ===============================
+// -------------------------
+// TYPING EFFECT
+// -------------------------
 
 const message =
 
@@ -78,30 +159,38 @@ const message =
 
 Happy Birthday!
 
-I made this little scrapbook especially for you.
+Today is all about YOU.
 
-Every page holds a small piece of my heart.
+I just wanted to remind you
+how special you are to me.
 
-I hope this makes you smile today. ❤️
+Thank you for making my life
+more beautiful every single day.
+
+I hope this little scrapbook
+brings a smile to your face.
+
+Happy Birthday once again ❤️
 
 Love,
+
 Rishit`;
 
-let i = 0;
+let index = 0;
 
 function startTyping(){
 
-    const typing = document.getElementById("typingText");
+    typingText.innerHTML="";
 
-    typing.innerHTML="";
+    index = 0;
 
     const interval = setInterval(()=>{
 
-        typing.innerHTML += message.charAt(i);
+        typingText.innerHTML += message.charAt(index);
 
-        i++;
+        index++;
 
-        if(i>=message.length){
+        if(index>=message.length){
 
             clearInterval(interval);
 
@@ -110,53 +199,172 @@ function startTyping(){
     },40);
 
 }
-// ===============================
-// Finish Button
-// ===============================
-
-const finishBtn = document.getElementById("finishBtn");
-
-if (finishBtn) {
-
-    finishBtn.addEventListener("click", () => {
-
-        alert("🎉 Happy Birthday Anisha ❤️");
-
-        // Final surprise will come here later
-
-    });
-
-}
-// ===============================
-// Page Navigation
-// ===============================
+// ==========================================
+// PAGE NAVIGATION
+// ==========================================
 
 const pages = document.querySelectorAll(".page");
-const nextButtons = document.querySelectorAll(".nextPage");
+
+const nextBtns = document.querySelectorAll(".nextBtn");
+
+const prevBtns = document.querySelectorAll(".prevBtn");
 
 let currentPage = 0;
 
-// Hide all pages except first
-pages.forEach((page, index) => {
-    if (index !== 0) {
-        page.style.display = "none";
-    }
-});
+function showPage(page){
 
-nextButtons.forEach(button => {
+    pages.forEach(p=>{
 
-    button.addEventListener("click", () => {
+        p.classList.remove("active");
 
-        pages[currentPage].style.display = "none";
+    });
 
-        currentPage++;
+    pages[page].classList.add("active");
 
-        if (currentPage < pages.length) {
+    currentPage = page;
 
-            pages[currentPage].style.display = "flex";
+}
+
+// Next Buttons
+
+nextBtns.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(currentPage < pages.length-1){
+
+            showPage(currentPage+1);
 
         }
 
     });
 
 });
+
+// Previous Buttons
+
+prevBtns.forEach(btn=>{
+
+    btn.addEventListener("click",()=>{
+
+        if(currentPage>0){
+
+            showPage(currentPage-1);
+
+        }
+
+    });
+
+});
+
+// Show First Page
+
+showPage(0);
+
+// ==========================================
+// CAKE
+// ==========================================
+
+const flame = document.querySelector(".flame");
+
+const cake = document.getElementById("cake");
+
+cake.addEventListener("click",()=>{
+
+    flame.style.opacity="0";
+
+    flame.style.transform="scale(0)";
+
+});
+
+// ==========================================
+// FINISH BUTTON
+// ==========================================
+
+const finishBtn = document.getElementById("finishBtn");
+
+const celebrationScreen=document.getElementById("celebrationScreen");
+
+finishBtn.addEventListener("click",()=>{
+
+    bookSection.style.display="none";
+
+    celebrationScreen.style.display="flex";
+
+    startConfetti();
+
+});
+
+// ==========================================
+// FOREVER BUTTON
+// ==========================================
+
+const foreverBtn=document.getElementById("foreverBtn");
+
+const foreverScreen=document.getElementById("foreverScreen");
+
+foreverBtn.addEventListener("click",()=>{
+
+    celebrationScreen.style.display="none";
+
+    foreverScreen.style.display="flex";
+
+});
+
+// ==========================================
+// REPLAY
+// ==========================================
+
+const restartBtn=document.getElementById("restartBtn");
+
+restartBtn.addEventListener("click",()=>{
+
+    location.reload();
+
+});
+
+// ==========================================
+// CONFETTI
+// ==========================================
+
+function startConfetti(){
+
+    const duration=5000;
+
+    const end=Date.now()+duration;
+
+    (function frame(){
+
+        confetti({
+
+            particleCount:8,
+
+            angle:60,
+
+            spread:70,
+
+            origin:{x:0}
+
+        });
+
+        confetti({
+
+            particleCount:8,
+
+            angle:120,
+
+            spread:70,
+
+            origin:{x:1}
+
+        });
+
+        if(Date.now()<end){
+
+            requestAnimationFrame(frame);
+
+        }
+
+    })();
+
+}
