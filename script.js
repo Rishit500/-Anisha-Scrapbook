@@ -153,10 +153,6 @@ openGift.addEventListener("click",()=>{
 // TYPING EFFECT
 // -------------------------
 
-// -------------------------
-// TYPING EFFECT
-// -------------------------
-
 const message = `Happy Birthday Meriii Princess ❤️🎂
 
 Thank you meri life mein aane ke liye aur har din ko itna special banane ke liye.
