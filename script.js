@@ -155,22 +155,11 @@ openGift.addEventListener("click",()=>{
 
 const message =
 
-`Dear Miss Clumsy ❤️,
-
-Happy Birthday!
-
-Today is all about YOU.
-
-I just wanted to remind you
-how special you are to me.
-
-Thank you for making my life
-more beautiful every single day.
-
-I hope this little scrapbook
-brings a smile to your face.
-
-Happy Birthday once again ❤️
+Happy Birthday Meriii  Princess ❤️🎂
+Thank you meri life mein aane ke liye aur har din ko itna special banane ke liye 
+Tumhari smile meri favourite hai aur tum meri favourite person
+Hamesha aise hi khush rehna
+I love you today, tomorrow and always. ❤️
 
 Love,
 
