@@ -261,7 +261,22 @@ prevBtns.forEach(btn=>{
 
 showPage(0);
 
+
 // ==========================================
+
+const finishBtn = document.getElementById("finishBtn");
+
+const celebrationScreen=document.getElementById("celebrationScreen");
+
+finishBtn.addEventListener("click",()=>{
+
+    bookSection.style.display="none";
+
+    celebrationScreen.style.display="flex";
+
+    startConfetti();
+
+});
 // ==========================================
 // PAGE 4 - BIRTHDAY CAKE
 // ==========================================
@@ -278,22 +293,35 @@ cakeNext.disabled = true;
 cakeNext.style.opacity = "0.5";
 cakeNext.style.cursor = "not-allowed";
 
-candle.addEventListener("click", () => {
+// Click on candle OR flame
+cakeSVG.addEventListener("click", (e) => {
 
     if (wishDone) return;
+
+    // Only react if candle or flame is clicked
+    if (e.target.id !== "candle" && e.target.id !== "flame") {
+        return;
+    }
 
     wishDone = true;
 
     // Blow out flame
     flame.style.transition = "0.5s";
     flame.style.opacity = "0";
+    flame.style.transform = "scale(0)";
 
-    // Cake bounce animation
-    cakeSVG.style.transform = "scale(1.05)";
-
-    setTimeout(() => {
-        cakeSVG.style.transform = "scale(1)";
-    }, 250);
+    // Cake bounce
+    cakeSVG.animate(
+        [
+            { transform: "scale(1)" },
+            { transform: "scale(1.05)" },
+            { transform: "scale(1)" }
+        ],
+        {
+            duration: 300,
+            easing: "ease"
+        }
+    );
 
     // Enable Continue button
     cakeNext.disabled = false;
@@ -301,25 +329,6 @@ candle.addEventListener("click", () => {
     cakeNext.style.cursor = "pointer";
 
 });
-
-// ==========================================
-// FINISH BUTTON
-// ==========================================
-
-const finishBtn = document.getElementById("finishBtn");
-
-const celebrationScreen=document.getElementById("celebrationScreen");
-
-finishBtn.addEventListener("click",()=>{
-
-    bookSection.style.display="none";
-
-    celebrationScreen.style.display="flex";
-
-    startConfetti();
-
-});
-
 // ==========================================
 // FOREVER BUTTON
 // ==========================================
