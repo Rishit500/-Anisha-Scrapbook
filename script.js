@@ -262,33 +262,38 @@ prevBtns.forEach(btn=>{
 showPage(0);
 
 // ==========================================
-// CAKE
 // ==========================================
-// ==========================================
-// BIRTHDAY CAKE
+// PAGE 4 - BIRTHDAY CAKE
 // ==========================================
 
-const candle = document.querySelector(".candle");
-const flame = document.querySelector(".flame");
+const candle = document.getElementById("candle");
+const flame = document.getElementById("flame");
+const cakeSVG = document.getElementById("cakeSVG");
 const cakeNext = document.getElementById("cakeNext");
+
+let wishDone = false;
 
 // Disable Continue button initially
 cakeNext.disabled = true;
 cakeNext.style.opacity = "0.5";
 cakeNext.style.cursor = "not-allowed";
 
-let candleBlown = false;
-
 candle.addEventListener("click", () => {
 
-    if (candleBlown) return;
+    if (wishDone) return;
 
-    candleBlown = true;
+    wishDone = true;
 
-    // Blow out the flame
+    // Blow out flame
     flame.style.transition = "0.5s";
     flame.style.opacity = "0";
-    flame.style.transform = "translateX(-50%) scale(0)";
+
+    // Cake bounce animation
+    cakeSVG.style.transform = "scale(1.05)";
+
+    setTimeout(() => {
+        cakeSVG.style.transform = "scale(1)";
+    }, 250);
 
     // Enable Continue button
     cakeNext.disabled = false;
