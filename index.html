@@ -325,6 +325,7 @@
 </div>
 
 <!-- ================= PAGE 4 ================= -->
+<!-- ================= PAGE 4 ================= -->
 
 <div class="page">
 
@@ -333,24 +334,86 @@
         <h2>Birthday Cake 🎂</h2>
 
         <p class="cake-text">
-            Make a birthday wish...
-            <br><br>
-            Then click the candle ❤️
+            Make a birthday wish ❤️
+            <br>
+            Click the candle to blow it out.
         </p>
 
         <div id="cake">
 
-            <!-- Candle -->
-            <div class="candle">
-                <div class="flame"></div>
-            </div>
+            <svg id="cakeSVG" viewBox="0 0 300 320">
 
-            <!-- Cake -->
-            <div class="cake-top"></div>
+                <!-- Plate -->
+                <ellipse cx="150" cy="295" rx="95" ry="12" fill="#d9d9d9"/>
 
-            <div class="cake-body"></div>
+                <!-- Bottom Layer -->
+                <rect x="70" y="180" width="160" height="85" rx="16"
+                      fill="#ff73ab"/>
 
-            <div class="cake-bottom"></div>
+                <!-- Bottom Cream -->
+                <path d="M70 180
+                         Q80 195 90 180
+                         Q100 195 110 180
+                         Q120 195 130 180
+                         Q140 195 150 180
+                         Q160 195 170 180
+                         Q180 195 190 180
+                         Q200 195 210 180
+                         Q220 195 230 180"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="10"
+                      stroke-linecap="round"/>
+
+                <!-- Top Layer -->
+                <rect x="95" y="105" width="110" height="70" rx="15"
+                      fill="#ff96c4"/>
+
+                <!-- Top Cream -->
+                <path d="M95 105
+                         Q105 120 115 105
+                         Q125 120 135 105
+                         Q145 120 155 105
+                         Q165 120 175 105
+                         Q185 120 195 105
+                         Q205 120 205 105"
+                      fill="none"
+                      stroke="white"
+                      stroke-width="9"
+                      stroke-linecap="round"/>
+
+                <!-- Cherries -->
+                <circle cx="120" cy="95" r="6" fill="#ff2d55"/>
+                <circle cx="150" cy="88" r="6" fill="#ff2d55"/>
+                <circle cx="180" cy="95" r="6" fill="#ff2d55"/>
+
+                <!-- Candle -->
+                <rect id="candle"
+                      x="145"
+                      y="45"
+                      width="10"
+                      height="55"
+                      rx="4"
+                      fill="white"/>
+
+                <!-- Candle Stripes -->
+                <line x1="145" y1="55" x2="155" y2="65"
+                      stroke="#ff5a9f" stroke-width="2"/>
+
+                <line x1="145" y1="70" x2="155" y2="80"
+                      stroke="#ff5a9f" stroke-width="2"/>
+
+                <line x1="145" y1="85" x2="155" y2="95"
+                      stroke="#ff5a9f" stroke-width="2"/>
+
+                <!-- Flame -->
+                <path id="flame"
+                      d="M150 20
+                         C140 35 145 45 150 45
+                         C155 45 160 35 150 20Z"
+                      fill="gold"/>
+
+            </svg>
 
         </div>
 
@@ -369,6 +432,7 @@
     </div>
 
 </div>
+
 <!-- ========================================= -->
 <!-- PAGE 5 -->
 <!-- ========================================= -->
