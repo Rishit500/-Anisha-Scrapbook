@@ -153,12 +153,15 @@ openGift.addEventListener("click",()=>{
 // TYPING EFFECT
 // -------------------------
 
-const message =
+const message = Happy Birthday Meriii Princess ❤️🎂
 
-Happy Birthday Meriii  Princess ❤️🎂
-Thank you meri life mein aane ke liye aur har din ko itna special banane ke liye 
-Tumhari smile meri favourite hai aur tum meri favourite person
-Hamesha aise hi khush rehna
+
+Thank you meri life mein aane ke liye aur har din ko itna special banane ke liye.
+    
+Tumhari smile meri favourite hai aur tum meri favourite person.
+    
+Hamesha aise hi khush rehna.
+    
 I love you today, tomorrow and always. ❤️
 
 Love,
