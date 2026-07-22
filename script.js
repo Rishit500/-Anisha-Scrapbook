@@ -264,16 +264,16 @@ showPage(0);
 // ==========================================
 // CAKE
 // ==========================================
-
+const candle = document.querySelector(".candle");
 const flame = document.querySelector(".flame");
 
-const cake = document.getElementById("cake");
+candle.addEventListener("click",()=>{
 
-cake.addEventListener("click",()=>{
+    flame.style.transition="0.5s";
 
     flame.style.opacity="0";
 
-    flame.style.transform="scale(0)";
+    flame.style.transform="translateX(-50%) scale(0)";
 
 });
 
