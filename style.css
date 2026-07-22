@@ -763,178 +763,77 @@ opacity:0;
     line-height:1.7;
 
 }
-
-/* ===========================
- /* ==========================
-   Birthday Cake
-========================== */
-
 /* ==========================================
-   PREMIUM BIRTHDAY CAKE
+   SVG BIRTHDAY CAKE
 ========================================== */
 
 #cake{
-    position:relative;
-    width:240px;
-    height:260px;
-    margin:50px auto;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:35px auto;
 }
 
-/* Plate */
+#cakeSVG{
+    width:280px;
+    max-width:100%;
+    height:auto;
 
-.cake-bottom{
-    position:absolute;
-    bottom:0;
-    width:240px;
-    height:18px;
-    background:#e5e5e5;
-    border-radius:50px;
+    filter:drop-shadow(0 12px 20px rgba(0,0,0,.18));
+
+    transition:.4s;
 }
 
-/* Bottom Layer */
-
-.cake-body{
-    position:absolute;
-    bottom:18px;
-    left:20px;
-    width:200px;
-    height:90px;
-    background:linear-gradient(to bottom,#ff89bb,#ff4d92);
-    border-radius:0 0 18px 18px;
-    box-shadow:0 8px 15px rgba(0,0,0,.15);
+#cakeSVG:hover{
+    transform:scale(1.03);
 }
 
-/* Top Layer */
-
-.cake-top{
-    position:absolute;
-    bottom:108px;
-    left:45px;
-    width:150px;
-    height:55px;
-    background:linear-gradient(to bottom,#ff9bc6,#ff6fa9);
-    border-radius:15px;
-    box-shadow:0 6px 12px rgba(0,0,0,.12);
+.cake-text{
+    text-align:center;
+    font-size:20px;
+    color:#666;
+    margin-bottom:20px;
+    line-height:1.6;
 }
 
-/* White Cream */
+/* Clickable Candle */
 
-.cake-top::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:-12px;
-
-    left:0;
-
-    width:100%;
-
-    height:18px;
-
-    background:white;
-
-    border-radius:20px;
-
-}
-
-/* Cream Drips */
-
-.cake-top::after{
-
-    content:"";
-
-    position:absolute;
-
-    bottom:-8px;
-
-    left:20px;
-
-    width:110px;
-
-    height:12px;
-
-    background:white;
-
-    border-radius:20px;
-
-}
-
-/* Candle */
-
-.candle{
-
-    position:absolute;
-
-    bottom:165px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:14px;
-
-    height:60px;
-
-    background:repeating-linear-gradient(
-        45deg,
-        white 0px,
-        white 5px,
-        #ff7ab5 5px,
-        #ff7ab5 10px
-    );
-
-    border-radius:6px;
-
+#candle{
     cursor:pointer;
-
 }
 
 /* Flame */
 
-.flame{
+#flame{
 
-    position:absolute;
+    transform-origin:center;
 
-    top:-24px;
-
-    left:50%;
-
-    transform:translateX(-50%);
-
-    width:18px;
-
-    height:28px;
-
-    background:linear-gradient(yellow,orange);
-
-    border-radius:50% 50% 45% 45%;
-
-    box-shadow:
-        0 0 8px gold,
-        0 0 18px orange,
-        0 0 30px gold;
-
-    animation:flicker .25s infinite alternate;
+    animation:flameGlow .4s infinite alternate;
 
 }
 
-@keyframes flicker{
+/* Flame Animation */
+
+@keyframes flameGlow{
 
     from{
 
-        transform:translateX(-50%) scale(1);
+        transform:scale(1);
+
+        filter:drop-shadow(0 0 5px gold);
 
     }
 
     to{
 
-        transform:translateX(-50%) scale(1.12);
+        transform:scale(1.12);
+
+        filter:drop-shadow(0 0 12px orange);
 
     }
 
 }
+
 /* ==========================================
    CELEBRATION SCREEN
 ========================================== */
