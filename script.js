@@ -299,9 +299,7 @@ cakeSVG.addEventListener("click", (e) => {
     if (wishDone) return;
 
     // Only react if candle or flame is clicked
-    if (e.target.id !== "candle" && e.target.id !== "flame") {
-        return;
-    }
+  
 
     wishDone = true;
 
