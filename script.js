@@ -264,16 +264,36 @@ showPage(0);
 // ==========================================
 // CAKE
 // ==========================================
+// ==========================================
+// BIRTHDAY CAKE
+// ==========================================
+
 const candle = document.querySelector(".candle");
 const flame = document.querySelector(".flame");
+const cakeNext = document.getElementById("cakeNext");
 
-candle.addEventListener("click",()=>{
+// Disable Continue button initially
+cakeNext.disabled = true;
+cakeNext.style.opacity = "0.5";
+cakeNext.style.cursor = "not-allowed";
 
-    flame.style.transition="0.5s";
+let candleBlown = false;
 
-    flame.style.opacity="0";
+candle.addEventListener("click", () => {
 
-    flame.style.transform="translateX(-50%) scale(0)";
+    if (candleBlown) return;
+
+    candleBlown = true;
+
+    // Blow out the flame
+    flame.style.transition = "0.5s";
+    flame.style.opacity = "0";
+    flame.style.transform = "translateX(-50%) scale(0)";
+
+    // Enable Continue button
+    cakeNext.disabled = false;
+    cakeNext.style.opacity = "1";
+    cakeNext.style.cursor = "pointer";
 
 });
 
